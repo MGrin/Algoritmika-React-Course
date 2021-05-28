@@ -1,10 +1,11 @@
 name: "Модуль 2, Задача 1: Игральные кости"
 on: ["push"]
 
+env:
+  FOLDER_WITH_TASK: "Module 2/1. random-dice"
+
 jobs:
   check:
-    env:
-      FOLDER_WITH_TASK: "Module 2/1. random-dice"
     name: Проверяем, было ли что-нибудь изменено в папке с заданием
     runs-on: ubuntu-latest
     steps:
@@ -21,8 +22,8 @@ jobs:
           while IFS= read -r file
           do
             echo $file
-            if [[ $file != "${{ FOLDER_WITH_TASK }}"/* ]]; then
-              echo "This modified file is not under the '${{ FOLDER_WITH_TASK }}' folder."
+            if [[ $file != "${{ env.FOLDER_WITH_TASK }}"/* ]]; then
+              echo "This modified file is not under the '${{ emv.FOLDER_WITH_TASK }}' folder."
               echo "::set-output name=run_job::false"
               break
             else
@@ -31,15 +32,13 @@ jobs:
           done < files.txt
 
   test:
-    env:
-      FOLDER_WITH_TASK: "Module 2/1. random-dice"
     name: Запускаем тесты
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        working-directory: ${{ FOLDER_WITH_TASK }}
+        working-directory: ${{ env.FOLDER_WITH_TASK }}
         run: npm install
       - name: Run tests
-        working-directory: ${{ FOLDER_WITH_TASK }}
+        working-directory: ${{ env.FOLDER_WITH_TASK }}
         run: npm test
