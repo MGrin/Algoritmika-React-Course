@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import ImagesGallery from './components/ImagesGallery';
 
-function App() {
+export const IMAGES = [{
+  name: 'Москва',
+  url: 'https://traveller-eu.ru/sites/default/files/styles/index/public/moscow-3550477_1280_0.jpg?itok=JWaobhQK',
+}, {
+  name: 'Санкт-Петербург',
+  url: 'https://www.uralairlines.ru/upload/iblock/f6e/f6e5aa4422be5787363c0edf6bde1fd9.jpg',
+}, {
+  name: 'Казань',
+  url: 'https://flysmartavia.com/media/images/city/20200707_kaz.jpg',
+}];
+
+export const INTERVAL = 3000;
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 data-testid="page-title">Галлерея</h1>
+      <ImagesGallery images={IMAGES} interval={INTERVAL} />
     </div>
   );
 }
-
-export default App;
