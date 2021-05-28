@@ -1,4 +1,5 @@
 name: "Модуль 2, Задача 1: Игральные кости"
+on: ["push"]
 
 env:
   FOLDER_WITH_TASK: "Module 2/1. random-dice"
