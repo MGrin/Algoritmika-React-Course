@@ -23,7 +23,7 @@ jobs:
           do
             echo $file
             if [[ $file != "${{ env.FOLDER_WITH_TASK }}"/* ]]; then
-              echo "This modified file is not under the '${{ emv.FOLDER_WITH_TASK }}' folder."
+              echo "This modified file is not under the '${{ env.FOLDER_WITH_TASK }}' folder."
               echo "::set-output name=run_job::false"
               break
             else
