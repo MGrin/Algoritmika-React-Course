@@ -1,7 +1,7 @@
-name: Модуль 2, Задача 1: Игральные кости
+name: "Модуль 2, Задача 1: Игральные кости"
 
 env:
-  FOLDER_WITH_TASK: 'Module 2/1. random-dice'
+  FOLDER_WITH_TASK: "Module 2/1. random-dice"
 
 jobs:
   check:
@@ -17,7 +17,7 @@ jobs:
 
           echo "=============== list modified files ==============="
           git diff --name-only HEAD^ HEAD
-          
+
           echo "========== check paths of modified files =========="
           git diff --name-only HEAD^ HEAD > files.txt
           while IFS= read -r file
