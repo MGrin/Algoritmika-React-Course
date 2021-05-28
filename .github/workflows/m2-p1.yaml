@@ -6,7 +6,7 @@ env:
 on:
   push:
     paths:
-      - ${{ env.FOLDER_WITH_TASK }}
+      - ${{ env.FOLDER_WITH_TASK }}/**
 
 jobs:
   test:
