@@ -6,7 +6,7 @@ env:
 on:
   push:
     paths:
-      - "Module 2/1. random-dice"/**
+      - "Module 2/1. random-dice/**"
 
 jobs:
   test:
