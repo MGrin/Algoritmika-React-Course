@@ -1,36 +1,14 @@
 name: "Модуль 2, Задача 1: Игральные кости"
-on: ["push"]
 
 env:
   FOLDER_WITH_TASK: "Module 2/1. random-dice"
 
+on:
+  push:
+    paths:
+      - ${{ env.FOLDER_WITH_TASK }}
+
 jobs:
-  check:
-    name: Проверяем, было ли что-нибудь изменено в папке с заданием
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: check modified files
-        id: check_files
-        run: |
-          echo "=============== list modified files ==============="
-          git diff --name-only HEAD^ HEAD
-
-          echo "========== check paths of modified files =========="
-          git diff --name-only HEAD^ HEAD > files.txt
-          while IFS= read -r file
-          do
-            echo $file
-            if [[ $file != "${{ env.FOLDER_WITH_TASK }}"/* ]]; then
-              echo "This modified file is not under the '${{ env.FOLDER_WITH_TASK }}' folder."
-              echo "::set-output name=run_job::false"
-              break
-            else
-              echo "::set-output name=run_job::true"
-            fi
-          done < files.txt
-
   test:
     name: Запускаем тесты
     runs-on: ubuntu-latest
