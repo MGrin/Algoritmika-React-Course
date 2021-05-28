@@ -6,9 +6,9 @@
 
 
 /**
- * Создайте компонент RandomDices
+ * Создайте компонент ProductsList
  */
-export default class RandomDices /* ВАШ КОД */ {
+export default class ProductsList /* ВАШ КОД */ {
 
   // ВАШ КОД
   
