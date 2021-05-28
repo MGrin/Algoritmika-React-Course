@@ -6,7 +6,7 @@ env:
 on:
   push:
     paths:
-      - ${{ env.FOLDER_WITH_TASK }}/**
+      - "Module 2/1. random-dice"/**
 
 jobs:
   test:
