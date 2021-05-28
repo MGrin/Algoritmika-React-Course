@@ -1,11 +1,10 @@
 name: "Модуль 2, Задача 1: Игральные кости"
 on: ["push"]
 
-env:
-  FOLDER_WITH_TASK: "Module 2/1. random-dice"
-
 jobs:
   check:
+    env:
+      FOLDER_WITH_TASK: "Module 2/1. random-dice"
     name: Проверяем, было ли что-нибудь изменено в папке с заданием
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +31,8 @@ jobs:
           done < files.txt
 
   test:
+    env:
+      FOLDER_WITH_TASK: "Module 2/1. random-dice"
     name: Запускаем тесты
     runs-on: ubuntu-latest
     steps:
