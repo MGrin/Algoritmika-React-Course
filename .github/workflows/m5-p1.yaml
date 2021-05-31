@@ -1,0 +1,22 @@
+name: "Модуль 5, Задача 1: Phone Code Input"
+
+env:
+  FOLDER_WITH_TASK: "Module 5/1. phone-code-input"
+
+on:
+  push:
+    paths:
+      - "Module 5/1. phone-code-input/**"
+
+jobs:
+  test:
+    name: Запускаем тесты
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        working-directory: ${{ env.FOLDER_WITH_TASK }}
+        run: npm install
+      - name: Run tests
+        working-directory: ${{ env.FOLDER_WITH_TASK }}
+        run: npm test
