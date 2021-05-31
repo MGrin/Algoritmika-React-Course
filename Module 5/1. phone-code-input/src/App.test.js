@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
-import CodeInput from './components/CodeInput.solved';
+import CodeInput from './components/CodeInput';
 
 const itif = (condition) => condition ? it : it.skip;
 
