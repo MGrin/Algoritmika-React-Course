@@ -1,12 +1,12 @@
-name: "Модуль 5, Задача 2: Products CRUD"
+name: "Модуль 6, Задача 1: Greetings Page"
 
 env:
-  FOLDER_WITH_TASK: "Module 5/2. products-crud"
+  FOLDER_WITH_TASK: "Module 6/1. greetings-page"
 
 on:
   push:
     paths:
-      - "Module 5/2. products-crud/**"
+      - "Module 6/1. greetings-page/**"
 
 jobs:
   test:
